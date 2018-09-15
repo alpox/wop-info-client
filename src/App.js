@@ -14,7 +14,6 @@ const Colored = ({ value }) => {
     "magenta",
     "white"
   ];
-  const currentValue = "";
   const colored = [];
 
   let i = 0;
@@ -82,9 +81,8 @@ class App extends Component {
   }
 
   componentDidMount() {
-    const socket = window.io(process.env.REACT_SERVER);
+    const socket = window.io(process.env.REACT_APP_SERVER);
     socket.on("updated", data => {
-      console.log(data);
       this.setState(state => ({
         serverInfo: this.sortInfo(data)
       }));
@@ -96,8 +94,6 @@ class App extends Component {
 
     return infoStr.map(playerString => {
       const player = playerString.split(" ");
-
-      if (playerString.includes("Ben")) console.log(playerString);
 
       return {
         name: player[2].slice(1, -1).trim(),
@@ -148,8 +144,8 @@ class App extends Component {
                   <div className="frags">Frags</div>
                   <div className="ping">Ping</div>
                 </div>
-                {this.getPlayers(server).map(player => (
-                  <div className="info" key={player.name}>
+                {this.getPlayers(server).map((player, idx) => (
+                  <div className="info" key={idx}>
                     <div className="name">
                       <Colored value={player.name} />
                     </div>
