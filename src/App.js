@@ -6,7 +6,6 @@ const Colored = ({ value }) => {
   const colors = [
     "black",
     "red",
-    "blue",
     "green",
     "yellow",
     "blue",
