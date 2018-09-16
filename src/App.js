@@ -109,14 +109,14 @@ class App extends Component {
           <img src={logo} className="logo" alt="logo" />
           <h1 className="app-title">World of Padman - Server Status</h1>
         </header>
-        {this.state.serverInfo.map(server => (
-          <div className="row" key={server.hostname}>
-            <div className="server-title">
-              <h1>
-                <Colored value={server.hostname} />
-              </h1>
-            </div>
-            <div className="informations">
+        <div className="container">
+          {this.state.serverInfo.map(server => (
+            <div className="row" key={server.hostname}>
+              <div className="server-title">
+                <h1>
+                  <Colored value={server.hostname} />
+                </h1>
+              </div>
               <div className="server-info">
                 <div className="info">
                   <span className="key">Current Map:</span>
@@ -154,8 +154,8 @@ class App extends Component {
                 ))}
               </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     );
   }

@@ -8,6 +8,7 @@ body {
 
 h1 {
   font-size: 1.3rem;
+  padding-bottom: 4px;
 }
 
 .header {
@@ -34,15 +35,21 @@ h1 {
   text-shadow: 2px 2px 5px #000;
 }
 
+.container {
+  column-count: 3;
+  column-gap: 1em;
+  margin-top: 20px;
+}
+
 .row {
-  display: grid;
+  display: inline-block;
+  width: 100%;
   background-color: #eee;
-  margin: 10px auto;
-  padding: 10px 16px;
+  margin: 0 0 0.5em;
+  margin-top: 5px;
   border-radius: 4px;
   overflow: hidden;
   box-shadow: 2px 3px 10px 1px #666;
-  max-width: 900px;
 }
 
 .server-title {
@@ -64,14 +71,9 @@ h1 {
   bottom: 0;
 }
 
-.informations {
-  display: grid;
-  grid-template-columns: 1fr 1.5fr;
-}
-
 .server-info {
-  padding: 16px;
-  font-size: 1.2rem;
+  padding: 8px 16px;
+  font-size: 0.8rem;
 }
 
 .server-info .info {
@@ -86,14 +88,12 @@ h1 {
 
 .players-info {
   padding: 16px;
-  margin-right: 40px;
 }
 
 .players-info .info.title {
   display: grid;
   color: rgba(0, 0, 0, 0.7);
   grid-template-columns: 1fr 1fr 1fr;
-  font-size: 1.1rem;
   font-weight: bold;
   border-bottom: 1px solid rgba(0, 0, 0, 0.3);
 }
@@ -106,7 +106,8 @@ h1 {
   display: grid;
   color: rgba(0, 0, 0, 0.7);
   grid-template-columns: 1fr 1fr 1fr;
-  padding: 8px 0;
+  padding: 4px 0;
+  font-size: 0.8rem;
 }
 
 .players-info .info > div:not(:first-child) {
@@ -149,12 +150,26 @@ h1 {
   color: rgb(255, 255, 0);
 }
 
-@media screen and (max-width: 724px) {
-  .informations {
-    grid-template-columns: 1fr;
+@media screen and (min-width: 1024px) {
+  .container {
+    column-count: 4;
   }
+}
 
-  .players-info {
-    margin: 0;
+@media screen and (max-width: 724px) {
+  .container {
+    column-count: 2;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .container {
+    column-count: 1;
+  }
+}
+
+@media screen and (max-width: 470px) {
+  .app-title {
+    display: none;
   }
 }
