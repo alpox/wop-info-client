@@ -101,7 +101,7 @@ h1 {
 .players-info .info.title {
     display: grid;
     color: rgba(0, 0, 0, 0.7);
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1.5fr 1fr 1fr;
     font-weight: bold;
     border-bottom: 1px solid rgba(0, 0, 0, 0.3);
 }
@@ -113,7 +113,7 @@ h1 {
 .players-info .info {
     display: grid;
     color: rgba(0, 0, 0, 0.7);
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1.5fr 1fr 1fr;
     padding: 4px 0;
     font-size: 0.8rem;
 }
