@@ -89,10 +89,11 @@ class App extends Component {
     }
 
     getPlayers(server) {
+        if (!server.g_beryllium) return [];
         const infoStr = server.g_beryllium.split('\n').slice(1, -1);
 
         return infoStr.map(playerString => {
-            const player = /(\d+) (\d+) "(.+?)"/.exec(playerString);
+            const player = /([-\d]+) ([-\d]+) "(.+?)"/.exec(playerString);
 
             return {
                 name: player[3].trim(),
