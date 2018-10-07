@@ -60,10 +60,12 @@ class App extends Component {
             'Free For All',
             'Tournament',
             'Single Player',
-            'Team Deathmatch',
-            'Last Pad Standing',
             'Spray your Color',
-            'Capture the Lolly'
+            'Last Pad Standing',
+            'Team Deathmatch',
+            'Capture the Lolly',
+            undefined,
+            'Big Balloon'
         ];
     }
 
@@ -90,7 +92,7 @@ class App extends Component {
 
     getPlayers(server) {
         const playersString = server['.Web2'] || server.g_beryllium;
-
+        console.log(server);
         if (!playersString) return [];
 
         const infoStr = playersString.split('\n').slice(1, -1);
