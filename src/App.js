@@ -95,15 +95,17 @@ class App extends Component {
 
         const infoStr = playersString.split('\n').slice(1, -1);
 
-        return infoStr.map(playerString => {
-            const player = /([-\d]+) ([-\d]+) "(.+?)"/.exec(playerString);
+        return infoStr
+            .map(playerString => {
+                const player = /([-\d]+) ([-\d]+) "(.+?)"/.exec(playerString);
 
-            return {
-                name: player[3].trim(),
-                frags: player[1],
-                ping: player[2]
-            };
-        });
+                return {
+                    name: player[3].trim(),
+                    frags: player[1],
+                    ping: player[2]
+                };
+            })
+            .sort((a, b) => b.frags - a.frags);
     }
 
     render() {
