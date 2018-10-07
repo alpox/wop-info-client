@@ -89,8 +89,11 @@ class App extends Component {
     }
 
     getPlayers(server) {
-        if (!server.g_beryllium) return [];
-        const infoStr = server.g_beryllium.split('\n').slice(1, -1);
+        const playersString = server['.Web2'] || server.g_beryllium;
+
+        if (!playersString) return [];
+
+        const infoStr = playersString.split('\n').slice(1, -1);
 
         return infoStr.map(playerString => {
             const player = /([-\d]+) ([-\d]+) "(.+?)"/.exec(playerString);
