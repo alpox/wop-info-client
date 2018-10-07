@@ -156,7 +156,7 @@ class App extends Component {
                             <div className="players-info">
                                 <div className="info title">
                                     <div className="name">Player</div>
-                                    <div className="frags">Frags</div>
+                                    <div className="frags">Score</div>
                                     <div className="ping">Ping</div>
                                 </div>
                                 {this.getPlayers(server).map((player, idx) => (
