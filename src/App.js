@@ -64,7 +64,7 @@ class App extends Component {
             'Last Pad Standing',
             'Team Deathmatch',
             'Capture the Lolly',
-            undefined,
+            'Team Spray your Color',
             'Big Balloon'
         ];
     }
