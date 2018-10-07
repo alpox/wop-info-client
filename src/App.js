@@ -92,7 +92,7 @@ class App extends Component {
 
     getPlayers(server) {
         const playersString = server['.Web2'] || server.g_beryllium;
-        console.log(server);
+
         if (!playersString) return [];
 
         const infoStr = playersString.split('\n').slice(1, -1);
