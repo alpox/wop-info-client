@@ -102,7 +102,7 @@ class App extends Component {
     
 
     getPlayers(server) {
-        const playersString = server['.Web2'] || server.g_beryllium;
+        const playersString = server['.Web2'] || server.g_beryllium || server.g_Modifier_WeaponScore;
 
         if (!playersString) return [];
 
