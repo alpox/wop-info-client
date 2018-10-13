@@ -229,9 +229,7 @@ h1 {
         -webkit-column-count: 1;
         column-count: 1;
     }
-}
 
-@media screen and (max-width: 470px) {
     .app-title {
         display: none;
     }
