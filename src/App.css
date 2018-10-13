@@ -126,6 +126,57 @@ h1 {
     text-shadow: 1px 1px 1px #000;
 }
 
+.header-center {
+    display: flex;
+    align-items: center;
+}
+
+.switch {
+    display: flex;
+    padding: 0;
+    height: 80%;
+    border-radius: 12px;
+    border: 2px solid rgb(200, 255, 200);
+    background-color: rgb(0, 0, 0, 0);
+    overflow: hidden;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.switch > div {
+    display: flex;
+    align-items: center;
+    padding: 8px 16px;
+}
+
+.switch .active {
+    color: #333333;
+    background-color: rgb(0, 255, 0);
+    position: relative;
+}
+
+.switch .active:first-child::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 100%;
+    transform: translateY(-50%);
+    border-top: 8px solid transparent;
+    border-bottom: 8px solid transparent;
+    border-left: 8px solid rgb(0, 255, 0);
+}
+
+.switch .active:last-child::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: -8px;
+    transform: translateY(-50%);
+    border-top: 8px solid transparent;
+    border-bottom: 8px solid transparent;
+    border-right: 8px solid rgb(0, 255, 0);
+}
+
 .black {
     color: black;
 }

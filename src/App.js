@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import logo from './wop.jpg';
 import './App.css';
 
+const VERSION_16 = '1.6';
+const VERSION_12 = '1.2';
+
 const Colored = ({ value }) => {
     const colors = [
         'black',
@@ -53,7 +56,9 @@ class App extends Component {
         super(props);
 
         this.state = {
-            serverInfo: []
+            serverInfo16: [],
+            serverInfo12: [],
+            version: VERSION_16
         };
 
         this.gametypes = [
@@ -67,6 +72,8 @@ class App extends Component {
             'Team Spray your Color',
             'Big Balloon'
         ];
+
+        this.toggleVersion = this.toggleVersion.bind(this);
     }
 
     withoutColor(hostname) {
@@ -84,11 +91,15 @@ class App extends Component {
     componentDidMount() {
         const socket = window.io(process.env.REACT_APP_SERVER);
         socket.on('updated', data => {
-            this.setState(state => ({
-                serverInfo: this.sortInfo(data)
+            const sortedInfo = this.sortInfo(data);
+
+            this.setState(_ => ({
+                serverInfo16: sortedInfo.filter(info => info.version === VERSION_16),
+                serverInfo12: sortedInfo.filter(info => info.version === VERSION_12)
             }));
         });
     }
+    
 
     getPlayers(server) {
         const playersString = server['.Web2'] || server.g_beryllium;
@@ -110,17 +121,41 @@ class App extends Component {
             .sort((a, b) => b.frags - a.frags);
     }
 
+    versionClass(version) {
+        return this.state.version === version ? 'active' : '';
+    }
+
+    toggleVersion() {
+        this.setState(state => ({
+            version: state.version === VERSION_16 ? VERSION_12 : VERSION_16
+        }));
+    }
+
     render() {
+        const serverInfo = this.state.version === VERSION_16
+            ? this.state.serverInfo16
+            : this.state.serverInfo12;
+
         return (
             <div className="app">
                 <header className="header">
                     <img src={logo} className="logo" alt="logo" />
+                    <div class="header-center">
+                        <div class="switch" onClick={this.toggleVersion}>
+                            <div className={this.versionClass('1.6')}>
+                                <span>1.6</span>
+                            </div>
+                            <div className={this.versionClass('1.2')}>
+                                <span>1.2</span>
+                            </div>
+                        </div>
+                    </div>
                     <h1 className="app-title">
                         World of Padman - Server Status
                     </h1>
                 </header>
                 <div className="container">
-                    {this.state.serverInfo.map(server => (
+                    {serverInfo.map(server => (
                         <div className="row" key={server.hostname}>
                             <div className="server-title">
                                 <h1>
