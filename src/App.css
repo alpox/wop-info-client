@@ -118,6 +118,13 @@ h1 {
     font-size: 0.8rem;
 }
 
+.players-info .info.no-players {
+    grid-template-columns: 1fr;
+    font-weight: bold;
+    padding: 8px 0;
+    text-align: center;
+}
+
 .players-info .info > div:not(:first-child) {
     text-align: center;
 }

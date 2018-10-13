@@ -90,7 +90,10 @@ class App extends Component {
     componentDidMount() {
         const socket = window.io(process.env.REACT_APP_SERVER);
         socket.on('updated', data => {
-            const sortedInfo = this.sortInfo(data);
+            const sortedInfo = this.sortInfo(data).map(info => ({
+                ...info,
+                players: this.getPlayers(info)
+            }));
 
             this.setState(_ => ({
                 serverInfo16: sortedInfo.filter(info => info.version === VERSION_16),
@@ -193,7 +196,9 @@ class App extends Component {
                                     <div className="frags">Score</div>
                                     <div className="ping">Ping</div>
                                 </div>
-                                {this.getPlayers(server).map((player, idx) => (
+                                {!server.players.length 
+                                    ? <div className="info no-players">No players online</div>
+                                    : server.players.map((player, idx) => (
                                     <div className="info" key={idx}>
                                         <div className="name">
                                             <Colored value={player.name} />
