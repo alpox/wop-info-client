@@ -35,8 +35,7 @@ const Colored = ({ value }) => {
         const text = value
             .slice(i + 2, next)
             .replace('\xa0', ' ')
-            .replace(String.fromCharCode(127), '')
-            .trim();
+            .replace(String.fromCharCode(127), '');
 
         if (text)
             colored.push(
