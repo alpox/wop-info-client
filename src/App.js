@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import logo from './wop.jpg';
-import './App.css';
 
 const VERSION_16 = '1.6';
 const VERSION_12 = '1.2';
@@ -171,28 +170,28 @@ class App extends Component {
                             </div>
                             <div className="server-info">
                                 <div className="info">
-                                    <span className="key">Current Map:</span>
-                                    <span className="value">
+                                    <div className="key">Current Map:</div>
+                                    <div className="value">
                                         {server.mapname}
-                                    </span>
+                                    </div>
                                 </div>
                                 <div className="info">
-                                    <span className="key">Game type:</span>
-                                    <span className="value">
+                                    <div className="key">Game type:</div>
+                                    <div className="value">
                                         {this.gametypes[server.gametype]}
-                                    </span>
+                                    </div>
                                 </div>
                                 <div className="info">
-                                    <span className="key">Point limit:</span>
-                                    <span className="value">
+                                    <div className="key">Point limit:</div>
+                                    <div className="value">
                                         {server.pointlimit}
-                                    </span>
+                                    </div>
                                 </div>
                                 <div className="info">
-                                    <span className="key">Time limit:</span>
-                                    <span className="value">
+                                    <div className="key">Time limit:</div>
+                                    <div className="value">
                                         {server.timelimit}
-                                    </span>
+                                    </div>
                                 </div>
                             </div>
                             <div className="players-info">

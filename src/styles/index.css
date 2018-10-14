@@ -17,8 +17,11 @@ h1 {
     height: 50px;
     padding: 10px 20px;
     color: white;
+    display: -ms-flexbox;
     display: flex;
+    -ms-flex-pack: justify;
     justify-content: space-between;
+    -webkit-box-shadow: 0px 3px 10px #666;
     box-shadow: 0px 3px 10px #666;
     margin: 0 -10px;
 }
@@ -52,6 +55,7 @@ h1 {
     margin-top: 5px;
     border-radius: 4px;
     overflow: hidden;
+    -webkit-box-shadow: 2px 3px 10px 1px #666;
     box-shadow: 2px 3px 10px 1px #666;
 }
 
@@ -69,6 +73,7 @@ h1 {
     position: absolute;
     left: 50%;
     -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
     transform: translateX(-50%);
     border-bottom: 1.5px solid rgba(0, 0, 0, 0.2);
     width: 80%;
@@ -81,21 +86,17 @@ h1 {
 }
 
 .server-info .info {
-    display: -ms-grid;
     display: grid;
-    -ms-grid-columns: 1fr 1fr;
-        grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
     color: rgba(0, 0, 0, 0.7);
 }
 
 .server-info .info .key {
     font-weight: bold;
-    -ms-grid-column: 1;
     grid-column: 1;
 }
 
 .server-info .info .value {
-    -ms-grid-column: 2;
     grid-column: 2;
 }
 
@@ -104,11 +105,9 @@ h1 {
 }
 
 .players-info .info.title {
-    display: -ms-grid;
     display: grid;
     color: rgba(0, 0, 0, 0.7);
-    -ms-grid-columns: 1.5fr 1fr 1fr;
-        grid-template-columns: 1.5fr 1fr 1fr;
+    grid-template-columns: 1.5fr 1fr 1fr;
     font-weight: bold;
     border-bottom: 1px solid rgba(0, 0, 0, 0.3);
 }
@@ -118,18 +117,15 @@ h1 {
 }
 
 .players-info .info {
-    display: -ms-grid;
     display: grid;
     color: rgba(0, 0, 0, 0.7);
-    -ms-grid-columns: 1.5fr 1fr 1fr;
-        grid-template-columns: 1.5fr 1fr 1fr;
+    grid-template-columns: 1.5fr 1fr 1fr;
     padding: 4px 0;
     font-size: 0.8rem;
 }
 
 .players-info .info.no-players {
-    -ms-grid-columns: 1fr;
-        grid-template-columns: 1fr;
+    grid-template-columns: 1fr;
     font-weight: bold;
     padding: 8px 0;
     text-align: center;
@@ -141,15 +137,12 @@ h1 {
 
 .players-info .info .name {
     text-shadow: 1px 1px 1px #000;
-    -ms-grid-column: 1;
     grid-column: 1;
 }
 .players-info .info .frags {
-    -ms-grid-column: 2;
     grid-column: 2;
 }
 .players-info .info .ping {
-    -ms-grid-column: 3;
     grid-column: 3;
 }
 
@@ -187,8 +180,7 @@ h1 {
     position: absolute;
     top: 50%;
     left: 100%;
-    -webkit-transform: translateY(-50%);
-            transform: translateY(-50%);
+    transform: translateY(-50%);
     border-top: 8px solid transparent;
     border-bottom: 8px solid transparent;
     border-left: 8px solid rgb(0, 255, 0);
@@ -199,8 +191,7 @@ h1 {
     position: absolute;
     top: 50%;
     left: -8px;
-    -webkit-transform: translateY(-50%);
-            transform: translateY(-50%);
+    transform: translateY(-50%);
     border-top: 8px solid transparent;
     border-bottom: 8px solid transparent;
     border-right: 8px solid rgb(0, 255, 0);
