@@ -7,7 +7,7 @@ const VERSION_12 = '1.2';
 
 const Colored = ({ value }) => {
     const colors = [
-        'black',
+        'white',
         'red',
         'green',
         'yellow',
@@ -104,7 +104,12 @@ class App extends Component {
     
 
     getPlayers(server) {
-        const playersString = server['.Web2'] || server.g_beryllium || server.g_Modifier_WeaponScore;
+        let playersString = server['.Web2'] || server.g_beryllium || server.g_Modifier_WeaponScore
+        if(!playersString) {
+            playersString = server.Players_Bot.concat(
+                server.Players_Team && server.Players_Team.split('\n').slice(1).join('\n')
+            );
+        }
 
         if (!playersString) return [];
 
