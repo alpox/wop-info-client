@@ -146,8 +146,8 @@ class App extends Component {
             <div className="app">
                 <header className="header">
                     <img src={logo} className="logo" alt="logo" />
-                    <div class="header-center">
-                        <div class="switch" onClick={this.toggleVersion}>
+                    <div className="header-center">
+                        <div className="switch" onClick={this.toggleVersion}>
                             <div className={this.versionClass('1.6')}>
                                 <span>1.6</span>
                             </div>

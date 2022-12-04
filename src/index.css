@@ -37,10 +37,10 @@ h1 {
 }
 
 .container {
-    -webkit-column-count: 3;
-    column-count: 3;
-    -webkit-column-gap: 1em;
-    column-gap: 1em;
+    -moz-column-count: 3;
+         column-count: 3;
+    -moz-column-gap: 1em;
+         column-gap: 1em;
     margin-top: 20px;
 }
 
@@ -68,7 +68,6 @@ h1 {
     content: ' ';
     position: absolute;
     left: 50%;
-    -webkit-transform: translateX(-50%);
     transform: translateX(-50%);
     border-bottom: 1.5px solid rgba(0, 0, 0, 0.2);
     width: 80%;
@@ -84,7 +83,7 @@ h1 {
     display: -ms-grid;
     display: grid;
     -ms-grid-columns: 1fr 1fr;
-        grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
     color: rgba(0, 0, 0, 0.7);
 }
 
@@ -108,7 +107,7 @@ h1 {
     display: grid;
     color: rgba(0, 0, 0, 0.7);
     -ms-grid-columns: 1.5fr 1fr 1fr;
-        grid-template-columns: 1.5fr 1fr 1fr;
+    grid-template-columns: 1.5fr 1fr 1fr;
     font-weight: bold;
     border-bottom: 1px solid rgba(0, 0, 0, 0.3);
 }
@@ -122,14 +121,14 @@ h1 {
     display: grid;
     color: rgba(0, 0, 0, 0.7);
     -ms-grid-columns: 1.5fr 1fr 1fr;
-        grid-template-columns: 1.5fr 1fr 1fr;
+    grid-template-columns: 1.5fr 1fr 1fr;
     padding: 4px 0;
     font-size: 0.8rem;
 }
 
 .players-info .info.no-players {
     -ms-grid-columns: 1fr;
-        grid-template-columns: 1fr;
+    grid-template-columns: 1fr;
     font-weight: bold;
     padding: 8px 0;
     text-align: center;
@@ -187,8 +186,7 @@ h1 {
     position: absolute;
     top: 50%;
     left: 100%;
-    -webkit-transform: translateY(-50%);
-            transform: translateY(-50%);
+    transform: translateY(-50%);
     border-top: 8px solid transparent;
     border-bottom: 8px solid transparent;
     border-left: 8px solid rgb(0, 255, 0);
@@ -199,8 +197,7 @@ h1 {
     position: absolute;
     top: 50%;
     left: -8px;
-    -webkit-transform: translateY(-50%);
-            transform: translateY(-50%);
+    transform: translateY(-50%);
     border-top: 8px solid transparent;
     border-bottom: 8px solid transparent;
     border-right: 8px solid rgb(0, 255, 0);
@@ -248,15 +245,15 @@ h1 {
 
 @media screen and (max-width: 928px) {
     .container {
-        -webkit-column-count: 2;
-        column-count: 2;
+        -moz-column-count: 2;
+             column-count: 2;
     }
 }
 
 @media screen and (max-width: 650px) {
     .container {
-        -webkit-column-count: 1;
-        column-count: 1;
+        -moz-column-count: 1;
+             column-count: 1;
     }
 
     .app-title {
